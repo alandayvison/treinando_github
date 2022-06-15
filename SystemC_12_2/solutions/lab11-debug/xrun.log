@@ -1,0 +1,33 @@
+$CDSROOT = /cds1/XCELIUM1909S001
+$TESTDIR = /export/home/mikep/SystemC_12_2/lab11-debug/example
+
+TOOL:	xmsc	19.09-s001
+xmsc C++ parameters: 
+	xmsc -COMPILER $CDSROOT/tools/cdsgcc/gcc/6.3/bin/g++ 
+	-f ./xcelium.d/run.lnx86.19.09.d/xmsc_run/xmsc_obj/xmsc.args
+	-MANUAL 
+	-CFLAGS "-DXMSC
+		-DNCSC
+		-I$CDSROOT/tools/systemc/include_pch
+		-I$CDSROOT/tools/tbsc/include
+		-I$CDSROOT/tools/vic/include
+		-I$CDSROOT/tools/methodology/OVM/CDNS-2.1.2/sc/src
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc
+		-I$CDSROOT/tools/systemc/include/cci
+		-I$CDSROOT/tools/systemc/include/factory
+		-I$CDSROOT/tools/systemc/include/tlm2
+		-D_GLIBCXX_USE_CXX11_ABI=0 -c
+		-x c++ -m32  -Wall 
+		-I$CDSROOT/tools/include
+		-I$CDSROOT/tools/inca/include"
+
+xmsc: compiling $TESTDIR/message.cpp
+
+xmsc: compiling $TESTDIR/scMain.cpp
+
+building library run.so
+
+	Top level design units:
+		scMain
+Output for xmsim is being redirected to xmsim.log

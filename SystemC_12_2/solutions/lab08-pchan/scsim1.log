@@ -1,0 +1,36 @@
+
+        SystemC 2.3.3-Accellera --- Nov  7 2019 18:05:15
+        Copyright (c) 1996-2018 by all Contributors,
+        ALL RIGHTS RESERVED
+START OF SYNC TEST
+Assert number free not 0
+Assert number available is 0
+Assert nonblocking write succeeds
+Assert channel not yet updated
+Wait for data_written_event
+Assert wait did not time out
+
+Info: (I804) /IEEE_Std_1666/deprecated: timed_out() function is deprecated
+Assert channel is updated
+Assert nonblocking read succeeds
+Assert stored value is correct
+Assert channel not yet updated
+Wait for data_read_event
+Assert wait did not time out
+Assert channel is updated
+Attempt blocking write
+Wait for write to complete
+Assert wait did not time out
+Attempt blocking read
+Wait for read to complete
+Assert wait did not time out
+Assert stored value is correct
+END OF SYNC TEST
+
+Info: (I804) /IEEE_Std_1666/deprecated: You can turn off warnings about
+             IEEE 1666 deprecated features by placing this method call
+             as the first statement in your sc_main() function:
+
+  sc_core::sc_report_handler::set_actions( "/IEEE_Std_1666/deprecated",
+                                           sc_core::SC_DO_NOTHING );
+

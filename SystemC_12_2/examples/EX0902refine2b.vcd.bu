@@ -1,0 +1,110 @@
+$date
+     Apr 04, 2011       12:38:28
+$end
+
+$version
+              IUS SystemC 10.20.p008 --- Dec  1 2010 19:57:05
+$end
+
+$timescale
+     1 ps
+$end
+
+$scope module SystemC $end
+$var wire    8  !  top.datao_s [7:0]  $end
+$var wire    1  "  top.full_s       $end
+$var wire    1  #  top.empty_s       $end
+$var wire    8  $  top.datai_s [7:0]  $end
+$var wire    1  %  top.write_s       $end
+$var wire    1  &  top.read_s       $end
+$var wire    1  '  top.clear_s       $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+b0 !
+0"
+0#
+b0 $
+1%
+1&
+1'
+$end
+
+#1000
+0%
+0&
+0'
+#2000
+b11000110 !
+b11000110 $
+1%
+1&
+#3000
+0%
+0&
+#4000
+b10100101 !
+b10100101 $
+1%
+1&
+#5000
+0%
+0&
+#6000
+b1010010 !
+b1010010 $
+1%
+1&
+#7000
+0%
+0&
+#8000
+b11101111 !
+b11101111 $
+1%
+1&
+#9000
+0%
+0&
+#10000
+b1110111 !
+b1110111 $
+1%
+1&
+#11000
+0%
+0&
+#12000
+b111011 !
+b111011 $
+1%
+1&
+#13000
+0%
+0&
+#14000
+b11101 !
+b11101 $
+1%
+1&
+#15000
+0%
+0&
+#16000
+b1110 !
+b1110 $
+1%
+1&
+#17000
+0%
+0&
+#18000
+b11000001 !
+b11000001 $
+1%
+1&

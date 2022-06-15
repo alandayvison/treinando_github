@@ -1,0 +1,18 @@
+# REMEMBER TO CUSTOMIZE "class_setup" for your installation (and source it)
+
+all : clean verify
+
+verify : scsim.log
+	tail -4 scsim_sav.log > scsim_sav.log.tmp
+	tail -4 scsim.log     > scsim.log.tmp
+	diff scsim_sav.log.tmp scsim.log.tmp > /dev/null 2>&1
+	rm scsim_sav.log.tmp scsim.log.tmp
+
+scsim.log : scsim
+	scsim > scsim.log 2>&1
+
+scsim : test.cpp
+	$(SCCC) test.cpp -g -o scsim -I$(SYSTEMC)/include -L$(SYSTEMC)/lib-$(TARGET_ARCH) -lsystemc
+
+clean :
+	rm -f scsim scsim.log > /dev/null 2>&1

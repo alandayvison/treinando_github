@@ -1,0 +1,246 @@
+#!/bin/csh -f
+
+  set test_osci = 0
+  set test_xmsc = 1
+
+#
+###############################################################
+#
+#                          Copyright 1996-2019
+#
+#               CADENCE  DESIGN  SYSTEMS  INCORPORATED
+#
+# The copyright notice appearing above is included to provide statutory
+# protection in the event of unauthorized or unintentional public disclosure
+# without written consent of an officer of Cadence Design Systems Incorporated.
+#
+#######################################################################
+#
+# Run this script to verify course database and software installation.
+# You are prompted to run the script graphically or nongraphically.
+#
+  set COURSE="SystemC Language Fundamentals"
+  set DATE = `date`
+  echo ""
+  echo "*********************************************************"
+  echo "TEST: Installation Test for $COURSE"
+  echo "*********************************************************"
+  echo ""
+  echo "Test started on" $DATE
+  echo ""
+########################################################################
+#
+# Find the name of the testscript and cd into the directory
+# containing the testscript. DO NOT make changes to this section.
+#
+  set thisFile=".testscript"
+  set installDir=`echo $0 | sed s/$thisFile//`
+  if("${installDir}" != "") cd $installDir
+#
+########################################################################
+#
+# Check to see if user wants to run the test results again without
+# rerunning the test. This is for testscript debugging purposes.
+#
+  set mailuser=""
+  if("${1}" == "-t")  then
+   if (-d .test ) then
+    echo "Verifying the test results" >> .test/results.txt
+    echo "Test started" $DATE         >> .test/results.txt
+    echo "" >> .test/results.txt
+    goto TESTPHASE
+   else
+    echo "There are no results to test - the .test directory is not present."
+    echo " "
+    echo "You must run the test script at least once without the"
+    echo "-t option before running it again with the -t option."
+    echo " "
+    exit
+   endif
+  endif
+#
+########################################################################
+# Make a virgin .test dir
+########################################################################
+#
+  rm -fr .test
+  cp -r .testMaster .test
+#
+########################################################################
+# Run test graphically or nongraphically?
+########################################################################
+#
+  set ARGUMENTS="NONE"
+  set GRAPH="-nograph"
+  if ("${1}" == "-graph")  then
+  echo "The current testscript runs only in nongraphic mode."
+   set ARGUMENTS="SOME"
+   set GRAPH="-graph"
+  endif
+  if ("${1}" == "-nograph")  then
+   set ARGUMENTS="SOME"
+   set GRAPH="-nograph"
+  endif
+
+  # Send Mail to Course Database installer when running nongraphically
+  if ("${GRAPH}" == "-nograph")  then
+   if ("${2}" != "")  set mailuser=$2
+  endif
+
+  if ("${ARGUMENTS}" == "NONE") then
+   set ans = ""
+   set GRAPH = "-nograph"
+#  echo -n "Run Graphically[g] or Nongraphically[n] [n]>"
+#  set ans = $<
+   if ( "$ans" == "" ) then
+    set GRAPH = "-nograph"
+   else if ( "$ans" == "n" ) then
+    set GRAPH = "-nograph"
+   else if ( "$ans" == "g" ) then
+    set GRAPH = "-graph"
+   endif
+  endif
+#
+########################################################################
+# Set up results file.
+########################################################################
+#
+  touch .test/results.txt
+  echo "Running the database installation test script for:"  >> .test/results.txt
+  echo "$COURSE"                                             >> .test/results.txt
+  echo "Test started" $DATE                                  >> .test/results.txt
+  echo ""                                                    >> .test/results.txt
+#
+########################################################################
+# Is the software installed?
+########################################################################
+#
+  cds_root xrun >& /dev/null
+  if ($status != 0) then
+    echo ""
+    echo 'The command "cds_root xrun" returns non-zero status.'
+    echo ""
+    echo "The most likely reason is that your PATH variable does not contain"
+    echo "the root of an XCELIUM installation containing the simulator."
+    echo "TEST FAIL"
+    echo ""
+    echo "" >> .test/results.txt
+    echo 'The command "cds_root xrun" returns non-zero status.' >> .test/results.txt
+    echo "" >> .test/results.txt
+    echo "The most likely reason is that your PATH variable does not contain" >> .test/results.txt
+    echo "the root of an XCELIUM installation containing the simulator." >> .test/results.txt
+    echo "TEST FAIL" >> .test/results.txt
+    echo "" >> .test/results.txt
+    exit 1
+  endif
+#
+########################################################################
+# Execute the test
+########################################################################
+#
+  cd .test
+
+  if ($test_osci == 1) then
+    echo "TEST: OSCI SystemC Simulator" >> results.txt
+    echo "TEST: OSCI SystemC Simulator"
+    make -f MakeOSCI -r >& MakeOSCI.log
+    if ($status != 0) then
+      echo "FAIL: make -f MakeOSCI" >> MakeOSCI.log
+      echo "FAIL: make -f MakeOSCI" >> results.txt
+      echo "FAIL: make -f MakeOSCI"
+      echo "Did you source the class_setup script?" >> MakeOSCI.log
+      echo "Did you source the class_setup script?" >> results.txt
+      echo "Did you source the class_setup script?"
+    endif
+  endif
+
+  if ($test_xmsc == 1) then
+    echo "TEST: XM-SC Simulator" >> results.txt
+    echo "TEST: XM-SC Simulator"
+    make -f MakeXMSC -r >& MakeXMSC.log
+    if ($status != 0) then
+      echo "FAIL: make -f MakeXMSC" >> MakeXMSC.log
+      echo "FAIL: make -f MakeXMSC" >> results.txt
+      echo "FAIL: make -f MakeXMSC"
+      echo "Did you source the class_setup script?" >> MakeXMSC.log
+      echo "Did you source the class_setup script?" >> results.txt
+      echo "Did you source the class_setup script?"
+    endif
+  endif
+
+ cd ..
+
+#
+########################################################################
+# Verify the test results
+########################################################################
+#
+TESTPHASE:
+#
+
+  echo ""
+
+# Begin Verification set 1
+
+  if ($test_osci == 1) then
+    if (`grep -c "FAIL" .test/MakeOSCI.log` != 0) then
+      echo "FAIL: OSCI SystemC Simulator" >> .test/results.txt
+      echo "FAIL: OSCI SystemC Simulator"
+    else
+      echo "PASS: OSCI SystemC Simulator" >> .test/results.txt
+      echo "PASS: OSCI SystemC Simulator"
+    endif
+  endif
+
+
+# Begin Verification set 2
+
+  if ($test_xmsc == 1) then
+    if (`grep -c "FAIL" .test/MakeXMSC.log` != 0) then
+      echo "FAIL: XM-SC Simulator" >> .test/results.txt
+      echo "FAIL: XM-SC Simulator"
+    else
+      echo "PASS: XM-SC Simulator" >> .test/results.txt
+      echo "PASS: XM-SC Simulator"
+    endif
+  endif
+
+
+#
+######################################################################
+# Generic test results report.
+######################################################################
+#
+  echo ""
+  set RESULTS = `grep FAIL .test/results.txt`
+  if ("${RESULTS}" != "") then
+   echo ""                                                     >> .test/results.txt
+   echo ""                                                     >> .test/results.txt
+   echo " *******************************************"         >> .test/results.txt
+   echo " * Suggestions for Corrections of FAILURES *"         >> .test/results.txt
+   echo " *******************************************"         >> .test/results.txt
+   echo ""                                                     >> .test/results.txt
+   echo "1. Read the Course Installation Guide and verify"     >> .test/results.txt
+   echo "   you followed the installation steps correctly."    >> .test/results.txt
+   echo "2. Check the README file for any course specific"     >> .test/results.txt
+   echo "   setup requirements."                               >> .test/results.txt
+   echo "3. Check the Software Products Required section"      >> .test/results.txt
+   echo "   of the README file for a list of products that"    >> .test/results.txt
+   echo "   are used in this course."                          >> .test/results.txt
+   echo "FAIL: Installation Test for $COURSE"
+   echo "For details execute: cat .test/results.txt"
+   echo "Subject: FAIL: Installation Test for $COURSE on `date`">.test/installResults
+  else
+   echo "PASS: Installation Test for $COURSE"
+   echo "Subject: PASS: Installation Test for $COURSE on `date`">.test/installResults
+  endif
+  if ("${mailuser}" != "") then
+   mail $mailuser < .test/installResults
+  endif
+#
+###################################################################
+# Include custom cleanup here.
+###################################################################
+#
+  exit
+

@@ -1,0 +1,12 @@
+xcelium> run
+SystemC: simulation stopped by user.
+
+
+SC simulation stopped by user.
+
+SystemC : SystemC stopped at time 3453
+xcelium> exit
+To unit: 0, trans sent: 5, trans rcvd: 5
+To unit: 1, trans sent: 6, trans rcvd: 6
+To unit: 2, trans sent: 13, trans rcvd: 13
+To unit: 3, trans sent: 8, trans rcvd: 8

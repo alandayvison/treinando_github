@@ -1,0 +1,8 @@
+
+             SystemC 2.1.v1 --- Oct 25 2005 08:19:09
+        Copyright (c) 1996-2005 by all Contributors
+                    ALL RIGHTS RESERVED
+SystemC says Hello!
+At 10 ns, a = 0, z = 1
+At 20 ns, a = 1, z = 0
+At 30 ns, a = 0, z = 1

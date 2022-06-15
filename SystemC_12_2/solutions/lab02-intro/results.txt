@@ -1,0 +1,9 @@
+cp -r /cds1/XCELIUM1909S001/tools/systemc/examples/systemc_only/ . >> /dev/null 2>&1
+xrun -f run.f -q >> /dev/null 2>&1
+diff systemc_only/xmsim.au systemc_only/xmsim.log >> /dev/null 2>&1
+
+cp -r /cds1/XCELIUM1909S001/doc/xmsctut1/example/ . >> /dev/null 2>&1
+xrun *.cpp -log_xmsim xmsim.log -q -sysc -top test_drink >> /dev/null 2>&1
+diff ../solutions/lab02-intro/xmsim.log example/xmsim.log >> /dev/null 2>&1
+
+#PASS: lab02-intro

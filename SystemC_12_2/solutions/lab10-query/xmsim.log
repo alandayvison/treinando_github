@@ -1,0 +1,242 @@
+system : sc_module
+|_system.node_0 : sc_module
+| |_system.node_0.p_net_read : sc_port
+| |_system.node_0.p_net_write : sc_port
+| |_system.node_0.cpu : sc_module
+| | |_system.node_0.cpu.p_cpu_write : sc_port
+| | |_system.node_0.cpu.p_cpu_read : sc_port
+| | |_system.node_0.cpu.cpu_write_process : sc_thread_process
+| | |_system.node_0.cpu.cpu_read_process : sc_thread_process
+| |_system.node_0.wrap : sc_module
+|   |_system.node_0.wrap.cpu_write_trans : sc_module
+|   | |_system.node_0.wrap.cpu_write_trans.p_cpu_tx_data_value : sc_out
+|   | |_system.node_0.wrap.cpu_write_trans.p_cpu_tx_data_ready : sc_out
+|   | |_system.node_0.wrap.cpu_write_trans.p_cpu_tx_data_done : sc_in
+|   |_system.node_0.wrap.cpu_tx_data_value : sc_signal
+|   |_system.node_0.wrap.cpu_tx_data_ready : sc_signal
+|   |_system.node_0.wrap.cpu_tx_data_done : sc_signal
+|   |_system.node_0.wrap.cpu_read_trans : sc_module
+|   | |_system.node_0.wrap.cpu_read_trans.p_cpu_rx_data_value : sc_in
+|   | |_system.node_0.wrap.cpu_read_trans.p_cpu_rx_data_ready : sc_in
+|   | |_system.node_0.wrap.cpu_read_trans.p_cpu_rx_data_done : sc_out
+|   |_system.node_0.wrap.cpu_rx_data_value : sc_signal
+|   |_system.node_0.wrap.cpu_rx_data_ready : sc_signal
+|   |_system.node_0.wrap.cpu_rx_data_done : sc_signal
+|   |_system.node_0.wrap.net_write_trans : sc_module
+|   | |_system.node_0.wrap.net_write_trans.p_net_tx_data_value : sc_out
+|   | |_system.node_0.wrap.net_write_trans.p_net_tx_data_ready : sc_out
+|   | |_system.node_0.wrap.net_write_trans.p_net_tx_data_done : sc_in
+|   |_system.node_0.wrap.net_tx_data_value : sc_signal
+|   |_system.node_0.wrap.net_tx_data_ready : sc_signal
+|   |_system.node_0.wrap.net_tx_data_done : sc_signal
+|   |_system.node_0.wrap.net_read_trans : sc_module
+|   | |_system.node_0.wrap.net_read_trans.p_net_rx_data_value : sc_in
+|   | |_system.node_0.wrap.net_read_trans.p_net_rx_data_ready : sc_in
+|   | |_system.node_0.wrap.net_read_trans.p_net_rx_data_done : sc_out
+|   |_system.node_0.wrap.net_rx_data_value : sc_signal
+|   |_system.node_0.wrap.net_rx_data_ready : sc_signal
+|   |_system.node_0.wrap.net_rx_data_done : sc_signal
+|   |_system.node_0.wrap.refined : sc_module
+|     |_system.node_0.wrap.refined.p_cpu_tx_data_value : sc_in
+|     |_system.node_0.wrap.refined.p_cpu_tx_data_ready : sc_in
+|     |_system.node_0.wrap.refined.p_cpu_tx_data_done : sc_out
+|     |_system.node_0.wrap.refined.p_cpu_rx_data_value : sc_out
+|     |_system.node_0.wrap.refined.p_cpu_rx_data_ready : sc_out
+|     |_system.node_0.wrap.refined.p_cpu_rx_data_done : sc_in
+|     |_system.node_0.wrap.refined.p_net_tx_data_value : sc_in
+|     |_system.node_0.wrap.refined.p_net_tx_data_ready : sc_in
+|     |_system.node_0.wrap.refined.p_net_tx_data_done : sc_out
+|     |_system.node_0.wrap.refined.p_net_rx_data_value : sc_out
+|     |_system.node_0.wrap.refined.p_net_rx_data_ready : sc_out
+|     |_system.node_0.wrap.refined.p_net_rx_data_done : sc_in
+|     |_system.node_0.wrap.refined.cpu_fifo : pnet_sync
+|     |_system.node_0.wrap.refined.net_fifo : pnet_sync
+|     |_system.node_0.wrap.refined.cpu_read_process : sc_thread_process
+|     |_system.node_0.wrap.refined.cpu_write_process : sc_thread_process
+|     |_system.node_0.wrap.refined.net_read_process : sc_thread_process
+|     |_system.node_0.wrap.refined.net_write_process : sc_thread_process
+|_system.node_1 : sc_module
+| |_system.node_1.p_net_read : sc_port
+| |_system.node_1.p_net_write : sc_port
+| |_system.node_1.cpu : sc_module
+| | |_system.node_1.cpu.p_cpu_write : sc_port
+| | |_system.node_1.cpu.p_cpu_read : sc_port
+| | |_system.node_1.cpu.cpu_write_process : sc_thread_process
+| | |_system.node_1.cpu.cpu_read_process : sc_thread_process
+| |_system.node_1.wrap : sc_module
+|   |_system.node_1.wrap.cpu_write_trans : sc_module
+|   | |_system.node_1.wrap.cpu_write_trans.p_cpu_tx_data_value : sc_out
+|   | |_system.node_1.wrap.cpu_write_trans.p_cpu_tx_data_ready : sc_out
+|   | |_system.node_1.wrap.cpu_write_trans.p_cpu_tx_data_done : sc_in
+|   |_system.node_1.wrap.cpu_tx_data_value : sc_signal
+|   |_system.node_1.wrap.cpu_tx_data_ready : sc_signal
+|   |_system.node_1.wrap.cpu_tx_data_done : sc_signal
+|   |_system.node_1.wrap.cpu_read_trans : sc_module
+|   | |_system.node_1.wrap.cpu_read_trans.p_cpu_rx_data_value : sc_in
+|   | |_system.node_1.wrap.cpu_read_trans.p_cpu_rx_data_ready : sc_in
+|   | |_system.node_1.wrap.cpu_read_trans.p_cpu_rx_data_done : sc_out
+|   |_system.node_1.wrap.cpu_rx_data_value : sc_signal
+|   |_system.node_1.wrap.cpu_rx_data_ready : sc_signal
+|   |_system.node_1.wrap.cpu_rx_data_done : sc_signal
+|   |_system.node_1.wrap.net_write_trans : sc_module
+|   | |_system.node_1.wrap.net_write_trans.p_net_tx_data_value : sc_out
+|   | |_system.node_1.wrap.net_write_trans.p_net_tx_data_ready : sc_out
+|   | |_system.node_1.wrap.net_write_trans.p_net_tx_data_done : sc_in
+|   |_system.node_1.wrap.net_tx_data_value : sc_signal
+|   |_system.node_1.wrap.net_tx_data_ready : sc_signal
+|   |_system.node_1.wrap.net_tx_data_done : sc_signal
+|   |_system.node_1.wrap.net_read_trans : sc_module
+|   | |_system.node_1.wrap.net_read_trans.p_net_rx_data_value : sc_in
+|   | |_system.node_1.wrap.net_read_trans.p_net_rx_data_ready : sc_in
+|   | |_system.node_1.wrap.net_read_trans.p_net_rx_data_done : sc_out
+|   |_system.node_1.wrap.net_rx_data_value : sc_signal
+|   |_system.node_1.wrap.net_rx_data_ready : sc_signal
+|   |_system.node_1.wrap.net_rx_data_done : sc_signal
+|   |_system.node_1.wrap.refined : sc_module
+|     |_system.node_1.wrap.refined.p_cpu_tx_data_value : sc_in
+|     |_system.node_1.wrap.refined.p_cpu_tx_data_ready : sc_in
+|     |_system.node_1.wrap.refined.p_cpu_tx_data_done : sc_out
+|     |_system.node_1.wrap.refined.p_cpu_rx_data_value : sc_out
+|     |_system.node_1.wrap.refined.p_cpu_rx_data_ready : sc_out
+|     |_system.node_1.wrap.refined.p_cpu_rx_data_done : sc_in
+|     |_system.node_1.wrap.refined.p_net_tx_data_value : sc_in
+|     |_system.node_1.wrap.refined.p_net_tx_data_ready : sc_in
+|     |_system.node_1.wrap.refined.p_net_tx_data_done : sc_out
+|     |_system.node_1.wrap.refined.p_net_rx_data_value : sc_out
+|     |_system.node_1.wrap.refined.p_net_rx_data_ready : sc_out
+|     |_system.node_1.wrap.refined.p_net_rx_data_done : sc_in
+|     |_system.node_1.wrap.refined.cpu_fifo : pnet_sync
+|     |_system.node_1.wrap.refined.net_fifo : pnet_sync
+|     |_system.node_1.wrap.refined.cpu_read_process : sc_thread_process
+|     |_system.node_1.wrap.refined.cpu_write_process : sc_thread_process
+|     |_system.node_1.wrap.refined.net_read_process : sc_thread_process
+|     |_system.node_1.wrap.refined.net_write_process : sc_thread_process
+|_system.node_2 : sc_module
+| |_system.node_2.p_net_read : sc_port
+| |_system.node_2.p_net_write : sc_port
+| |_system.node_2.cpu : sc_module
+| | |_system.node_2.cpu.p_cpu_write : sc_port
+| | |_system.node_2.cpu.p_cpu_read : sc_port
+| | |_system.node_2.cpu.cpu_write_process : sc_thread_process
+| | |_system.node_2.cpu.cpu_read_process : sc_thread_process
+| |_system.node_2.wrap : sc_module
+|   |_system.node_2.wrap.cpu_write_trans : sc_module
+|   | |_system.node_2.wrap.cpu_write_trans.p_cpu_tx_data_value : sc_out
+|   | |_system.node_2.wrap.cpu_write_trans.p_cpu_tx_data_ready : sc_out
+|   | |_system.node_2.wrap.cpu_write_trans.p_cpu_tx_data_done : sc_in
+|   |_system.node_2.wrap.cpu_tx_data_value : sc_signal
+|   |_system.node_2.wrap.cpu_tx_data_ready : sc_signal
+|   |_system.node_2.wrap.cpu_tx_data_done : sc_signal
+|   |_system.node_2.wrap.cpu_read_trans : sc_module
+|   | |_system.node_2.wrap.cpu_read_trans.p_cpu_rx_data_value : sc_in
+|   | |_system.node_2.wrap.cpu_read_trans.p_cpu_rx_data_ready : sc_in
+|   | |_system.node_2.wrap.cpu_read_trans.p_cpu_rx_data_done : sc_out
+|   |_system.node_2.wrap.cpu_rx_data_value : sc_signal
+|   |_system.node_2.wrap.cpu_rx_data_ready : sc_signal
+|   |_system.node_2.wrap.cpu_rx_data_done : sc_signal
+|   |_system.node_2.wrap.net_write_trans : sc_module
+|   | |_system.node_2.wrap.net_write_trans.p_net_tx_data_value : sc_out
+|   | |_system.node_2.wrap.net_write_trans.p_net_tx_data_ready : sc_out
+|   | |_system.node_2.wrap.net_write_trans.p_net_tx_data_done : sc_in
+|   |_system.node_2.wrap.net_tx_data_value : sc_signal
+|   |_system.node_2.wrap.net_tx_data_ready : sc_signal
+|   |_system.node_2.wrap.net_tx_data_done : sc_signal
+|   |_system.node_2.wrap.net_read_trans : sc_module
+|   | |_system.node_2.wrap.net_read_trans.p_net_rx_data_value : sc_in
+|   | |_system.node_2.wrap.net_read_trans.p_net_rx_data_ready : sc_in
+|   | |_system.node_2.wrap.net_read_trans.p_net_rx_data_done : sc_out
+|   |_system.node_2.wrap.net_rx_data_value : sc_signal
+|   |_system.node_2.wrap.net_rx_data_ready : sc_signal
+|   |_system.node_2.wrap.net_rx_data_done : sc_signal
+|   |_system.node_2.wrap.refined : sc_module
+|     |_system.node_2.wrap.refined.p_cpu_tx_data_value : sc_in
+|     |_system.node_2.wrap.refined.p_cpu_tx_data_ready : sc_in
+|     |_system.node_2.wrap.refined.p_cpu_tx_data_done : sc_out
+|     |_system.node_2.wrap.refined.p_cpu_rx_data_value : sc_out
+|     |_system.node_2.wrap.refined.p_cpu_rx_data_ready : sc_out
+|     |_system.node_2.wrap.refined.p_cpu_rx_data_done : sc_in
+|     |_system.node_2.wrap.refined.p_net_tx_data_value : sc_in
+|     |_system.node_2.wrap.refined.p_net_tx_data_ready : sc_in
+|     |_system.node_2.wrap.refined.p_net_tx_data_done : sc_out
+|     |_system.node_2.wrap.refined.p_net_rx_data_value : sc_out
+|     |_system.node_2.wrap.refined.p_net_rx_data_ready : sc_out
+|     |_system.node_2.wrap.refined.p_net_rx_data_done : sc_in
+|     |_system.node_2.wrap.refined.cpu_fifo : pnet_sync
+|     |_system.node_2.wrap.refined.net_fifo : pnet_sync
+|     |_system.node_2.wrap.refined.cpu_read_process : sc_thread_process
+|     |_system.node_2.wrap.refined.cpu_write_process : sc_thread_process
+|     |_system.node_2.wrap.refined.net_read_process : sc_thread_process
+|     |_system.node_2.wrap.refined.net_write_process : sc_thread_process
+|_system.node_3 : sc_module
+| |_system.node_3.p_net_read : sc_port
+| |_system.node_3.p_net_write : sc_port
+| |_system.node_3.cpu : sc_module
+| | |_system.node_3.cpu.p_cpu_write : sc_port
+| | |_system.node_3.cpu.p_cpu_read : sc_port
+| | |_system.node_3.cpu.cpu_write_process : sc_thread_process
+| | |_system.node_3.cpu.cpu_read_process : sc_thread_process
+| |_system.node_3.wrap : sc_module
+|   |_system.node_3.wrap.cpu_write_trans : sc_module
+|   | |_system.node_3.wrap.cpu_write_trans.p_cpu_tx_data_value : sc_out
+|   | |_system.node_3.wrap.cpu_write_trans.p_cpu_tx_data_ready : sc_out
+|   | |_system.node_3.wrap.cpu_write_trans.p_cpu_tx_data_done : sc_in
+|   |_system.node_3.wrap.cpu_tx_data_value : sc_signal
+|   |_system.node_3.wrap.cpu_tx_data_ready : sc_signal
+|   |_system.node_3.wrap.cpu_tx_data_done : sc_signal
+|   |_system.node_3.wrap.cpu_read_trans : sc_module
+|   | |_system.node_3.wrap.cpu_read_trans.p_cpu_rx_data_value : sc_in
+|   | |_system.node_3.wrap.cpu_read_trans.p_cpu_rx_data_ready : sc_in
+|   | |_system.node_3.wrap.cpu_read_trans.p_cpu_rx_data_done : sc_out
+|   |_system.node_3.wrap.cpu_rx_data_value : sc_signal
+|   |_system.node_3.wrap.cpu_rx_data_ready : sc_signal
+|   |_system.node_3.wrap.cpu_rx_data_done : sc_signal
+|   |_system.node_3.wrap.net_write_trans : sc_module
+|   | |_system.node_3.wrap.net_write_trans.p_net_tx_data_value : sc_out
+|   | |_system.node_3.wrap.net_write_trans.p_net_tx_data_ready : sc_out
+|   | |_system.node_3.wrap.net_write_trans.p_net_tx_data_done : sc_in
+|   |_system.node_3.wrap.net_tx_data_value : sc_signal
+|   |_system.node_3.wrap.net_tx_data_ready : sc_signal
+|   |_system.node_3.wrap.net_tx_data_done : sc_signal
+|   |_system.node_3.wrap.net_read_trans : sc_module
+|   | |_system.node_3.wrap.net_read_trans.p_net_rx_data_value : sc_in
+|   | |_system.node_3.wrap.net_read_trans.p_net_rx_data_ready : sc_in
+|   | |_system.node_3.wrap.net_read_trans.p_net_rx_data_done : sc_out
+|   |_system.node_3.wrap.net_rx_data_value : sc_signal
+|   |_system.node_3.wrap.net_rx_data_ready : sc_signal
+|   |_system.node_3.wrap.net_rx_data_done : sc_signal
+|   |_system.node_3.wrap.refined : sc_module
+|     |_system.node_3.wrap.refined.p_cpu_tx_data_value : sc_in
+|     |_system.node_3.wrap.refined.p_cpu_tx_data_ready : sc_in
+|     |_system.node_3.wrap.refined.p_cpu_tx_data_done : sc_out
+|     |_system.node_3.wrap.refined.p_cpu_rx_data_value : sc_out
+|     |_system.node_3.wrap.refined.p_cpu_rx_data_ready : sc_out
+|     |_system.node_3.wrap.refined.p_cpu_rx_data_done : sc_in
+|     |_system.node_3.wrap.refined.p_net_tx_data_value : sc_in
+|     |_system.node_3.wrap.refined.p_net_tx_data_ready : sc_in
+|     |_system.node_3.wrap.refined.p_net_tx_data_done : sc_out
+|     |_system.node_3.wrap.refined.p_net_rx_data_value : sc_out
+|     |_system.node_3.wrap.refined.p_net_rx_data_ready : sc_out
+|     |_system.node_3.wrap.refined.p_net_rx_data_done : sc_in
+|     |_system.node_3.wrap.refined.cpu_fifo : pnet_sync
+|     |_system.node_3.wrap.refined.net_fifo : pnet_sync
+|     |_system.node_3.wrap.refined.cpu_read_process : sc_thread_process
+|     |_system.node_3.wrap.refined.cpu_write_process : sc_thread_process
+|     |_system.node_3.wrap.refined.net_read_process : sc_thread_process
+|     |_system.node_3.wrap.refined.net_write_process : sc_thread_process
+|_system.connect_proc_0 : sc_thread_process
+|_system.connect_proc_1 : sc_thread_process
+|_system.connect_proc_2 : sc_thread_process
+|_system.connect_proc_3 : sc_thread_process
+walker : sc_module
+xcelium> run
+SystemC: simulation stopped by user.
+
+
+SC simulation stopped by user.
+
+SystemC : SystemC stopped at time 868
+xcelium> exit
+To unit: 0, trans sent: 0, trans rcvd: 0
+To unit: 1, trans sent: 0, trans rcvd: 0
+To unit: 2, trans sent: 3, trans rcvd: 3
+To unit: 3, trans sent: 1, trans rcvd: 1

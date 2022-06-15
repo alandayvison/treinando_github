@@ -1,0 +1,5 @@
+xcelium> run
+frame1 = 01ZX01ZX XZ10XZ10 frame2 = 01ZX01ZX XZ10XZ10
+WARNING: Default time step is used for VCD tracing.
+frame1 = 10111110 10101101 frame2 = 11111110 11101101
+Now view the waveform file "pnet_frame_test.vcd".

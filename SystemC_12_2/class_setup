@@ -1,0 +1,56 @@
+  setenv MY_FV_TOOL_ENV "AWS";         # AWS/Citrix
+# setenv MY_FV_TOOL_ENV "SJ_GRID";     # San Jose grid
+# setenv MY_FV_TOOL_ENV "MY_LOCAL_VM"  # My VMWare Linux
+
+  if ( $MY_FV_TOOL_ENV == "AWS") then
+    setenv LM_LICENSE_FILE 5280@10.8.10.76 ;
+    set FV_TOOL_BASE_DIR = "/cds/avs/install"
+  else if ( $MY_FV_TOOL_ENV == "SJ_GRID") then
+    setenv LM_LICENSE_FILE "5280@sjflex1:5280@sjflex2:5280@sjflex3:27000@sjtplic:27000@sjtplic:27005@sjflex4:27005@sjflex5:27005@sjflex6" ;
+    set FV_TOOL_BASE_DIR = "/grid/avs/install" ;
+    setenv TFO_SCRIPTS "/grid/tfo/scripts"
+    setenv LSF_SCRIPTS "/grid/sfi/farm/bin"
+  else if ( $MY_FV_TOOL_ENV == "MY_LOCAL_VM") then
+    setenv LM_LICENSE_FILE "5280@PC-MIKEP" ;
+    set FV_TOOL_BASE_DIR = "/cds1" ;
+  endif
+
+  set XCELIUM_REL = "1909";
+  set XCELIUM_stream = "19.09.001";
+
+# Initial non-tool PATH as per new Cadence IT RHEL65 image
+  setenv PATH .:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin;
+
+# Paths required for LSF on SJ grid
+  if ( $MY_FV_TOOL_ENV == "SJ_GRID") then
+    setenv PATH "${PATH}:${TFO_SCRIPTS}:${LSF_SCRIPTS}"
+    setenv PATH "${PATH}:${LSF_SCRIPTS}"
+    setenv PATH "${PATH}:/grid/common/bin"
+  endif
+
+  set SVG_HOME = /cds/avs/SVG_crs
+  set SVG_LAB_DIR = ${SVG_HOME}/labs
+  set SVG_SCRIPT_DIR = ${SVG_HOME}/scripts
+  set USER_LAB_DIR_NAME = course_lab_tar_files
+
+  set ALL_XCELIUM_BASE_DIR = "${FV_TOOL_BASE_DIR}/xcelium" ;
+  set XCELIUM_INST_DIR = ${ALL_XCELIUM_BASE_DIR}/${XCELIUM_REL}/${XCELIUM_stream}
+  set XCELIUM_BIN_DIR = ${XCELIUM_INST_DIR}/bin
+  set XCELIUM_TOOLS_BIN_DIR = ${XCELIUM_INST_DIR}/tools/bin
+  setenv PATH "${PATH}:${XCELIUM_BIN_DIR}:${XCELIUM_TOOLS_BIN_DIR}"
+  setenv ROOT_FIND_NAME "xmroot"
+
+  setenv CDS_AUTO_64BIT ALL
+  set filec
+  set history = 50
+  stty erase ^h
+
+# Following are purely for the OSCI SystemC
+  setenv SCCC /usr/bin/g++
+  setenv SYSTEMC /cds1/systemc-2.3.3
+  setenv TARGET_ARCH linux64
+  if ( $?LD_LIBRARY_PATH == "1" ) then
+    setenv LD_LIBRARY_PATH .:${SYSTEMC}/lib-${TARGET_ARCH}:${LD_LIBRARY_PATH}
+  else
+    setenv LD_LIBRARY_PATH .:${SYSTEMC}/lib-${TARGET_ARCH}
+  endif

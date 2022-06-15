@@ -1,0 +1,47 @@
+$CDSROOT = /cds1/XCELIUM1909S001
+$TESTDIR = /export/home/mikep/SystemC_12_2/lab08-pchan
+
+TOOL:	xmsc	19.09-s001
+xmsc C++ parameters: 
+	xmsc -COMPILER $CDSROOT/tools/cdsgcc/gcc/6.3/bin/g++ 
+	-f ./xcelium.d/run.lnx86.19.09.d/xmsc_run/xmsc_obj/xmsc.args
+	-MANUAL 
+	-CFLAGS "-DXMSC
+		-DNCSC
+		-I$CDSROOT/tools/systemc/include_pch
+		-I$CDSROOT/tools/tbsc/include
+		-I$CDSROOT/tools/vic/include
+		-I$CDSROOT/tools/methodology/OVM/CDNS-2.1.2/sc/src
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/sc/sc
+		-I$CDSROOT/tools/methodology/UVM/CDNS-1.1d/ml/sc
+		-I$CDSROOT/tools/systemc/include/cci
+		-I$CDSROOT/tools/systemc/include/factory
+		-I$CDSROOT/tools/systemc/include/tlm2
+		-D_GLIBCXX_USE_CXX11_ABI=0 -c
+		-x c++ -m32  -Wall 
+		-I$CDSROOT/tools/include
+		-I$CDSROOT/tools/inca/include"
+
+xmsc: compiling $TESTDIR/pnet_frame.cpp
+
+xmsc: compiling $TESTDIR/pnet_chan.cpp
+
+xmsc: compiling $TESTDIR/pnet_cpu.cpp
+
+xmsc: compiling $TESTDIR/pnet_node.cpp
+
+xmsc: compiling $TESTDIR/pnet_system.cpp
+
+xmsc: compiling $TESTDIR/pnet_monitor.cpp
+
+xmsc: compiling $TESTDIR/sc_main.cpp
+$TESTDIR/sc_main.cpp:20:17: warning: 'SEED' initialized and declared 'extern'
+$TESTDIR/sc_main.cpp:21:17: warning: 'NODES' initialized and declared 'extern'
+$TESTDIR/sc_main.cpp:22:17: warning: 'VERBOSITY' initialized and declared 'extern'
+$TESTDIR/sc_main.cpp:23:17: warning: 'TRANSACTIONS' initialized and declared 'extern'
+
+building library run.so
+
+	Top level design units:
+		sc_main
+Output for xmsim is being redirected to xmsim2.log

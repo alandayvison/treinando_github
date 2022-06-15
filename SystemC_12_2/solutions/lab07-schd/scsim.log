@@ -1,0 +1,32 @@
+
+        SystemC 2.3.3-Accellera --- Nov  7 2019 18:05:15
+        Copyright (c) 1996-2018 by all Contributors,
+        ALL RIGHTS RESERVED
+
+Info: (I804) /IEEE_Std_1666/deprecated: sc_simulation_time() is deprecated use sc_time_stamp()
+time: 0, cycle: 0 Write process started
+time: 0, cycle: 0 Write process wrote data 42
+time: 0, cycle: 0 Write process wrote data 86
+time: 0, cycle: 0 Read  process started
+time: 0, cycle: 1 Read  process read  data 42
+time: 0, cycle: 1 Read  process read  data 86
+time: 0, cycle: 2 Write process wrote data 911
+time: 0, cycle: 3 Read  process read  data 911
+time: 1, cycle: 4 Read  process started
+time: 1, cycle: 4 Write process started
+time: 1, cycle: 4 Write process wrote data 42
+time: 1, cycle: 4 Write process wrote data 86
+time: 1, cycle: 5 Read  process read  data 42
+time: 1, cycle: 5 Read  process read  data 86
+time: 1, cycle: 6 Write process wrote data 911
+time: 1, cycle: 7 Read  process read  data 911
+
+Info: /OSCI/SystemC: Simulation stopped by user.
+
+Info: (I804) /IEEE_Std_1666/deprecated: You can turn off warnings about
+             IEEE 1666 deprecated features by placing this method call
+             as the first statement in your sc_main() function:
+
+  sc_core::sc_report_handler::set_actions( "/IEEE_Std_1666/deprecated",
+                                           sc_core::SC_DO_NOTHING );
+

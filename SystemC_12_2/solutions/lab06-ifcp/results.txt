@@ -1,0 +1,11 @@
+cp ../solutions/lab06-ifcp/*.h   . >> /dev/null 2>&1
+cp ../solutions/lab06-ifcp/*.cpp . >> /dev/null 2>&1
+rm -f scsim.exe *.log *.tmp >> /dev/null 2>&1
+
+/usr/bin/g++ *.cpp -g -o scsim.exe -I/cds1/systemc-2.3.3/include -L/cds1/systemc-2.3.3/lib-linux64 -lsystemc >> g++.log 2>&1
+scsim.exe >> scsim.log 2>&1
+tail -5 ../solutions/lab06-ifcp/scsim.log >> scsim_old.log.tmp 2>&1
+tail -5                   scsim.log >> scsim_new.log.tmp 2>&1
+diff scsim_old.log.tmp scsim_new.log.tmp >> /dev/null 2>&1
+
+#PASS: lab06-ifcp

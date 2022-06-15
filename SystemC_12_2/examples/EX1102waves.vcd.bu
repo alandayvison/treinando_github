@@ -1,0 +1,360 @@
+$date
+     Nov 13, 2019       11:10:45
+$end
+
+$version
+ SystemC 2.3.3-Accellera --- Nov  7 2019 18:05:15
+$end
+
+$timescale
+     100 ps
+$end
+
+$scope module SystemC $end
+$var wire    1  aaaaa  pbool       $end
+$var wire    8  aaaab  pchar [7:0]  $end
+$var wire   16  aaaac  pshort [15:0]  $end
+$var wire   32  aaaad  pint [31:0]  $end
+$var wire   64  aaaae  plong [63:0]  $end
+$var real    1  aaaaf  pfloat       $end
+$var real    1  aaaag  pdouble       $end
+$var wire    1  aaaah  bit       $end
+$var wire    1  aaaai  logic       $end
+$var wire    4  aaaaj  bv4 [3:0]  $end
+$var wire    4  aaaak  lv4 [3:0]  $end
+$var wire   64  aaaal  int64 [63:0]  $end
+$var wire   64  aaaam  uint64 [63:0]  $end
+$var wire   65  aaaan  bigint65 [64:0]  $end
+$var wire   65  aaaao  biguint65 [64:0]  $end
+$var wire    5  aaaap  fixed53 [4:0]  $end
+$var wire    4  aaaaq  ufixed42 [3:0]  $end
+$var wire    5  aaaar  fix53 [4:0]  $end
+$var wire    4  aaaas  ufix42 [3:0]  $end
+$var wire    1  aaaat  clock1       $end
+$var wire   32  aaaau  signal1 [31:0]  $end
+$var wire   32  aaaav  out_p1 [31:0]  $end
+$upscope $end
+$enddefinitions  $end
+
+$comment
+All initial values are dumped below at time 0 sec = 0 timescale units.
+$end
+
+$dumpvars
+0aaaaa
+b0 aaaab
+b0 aaaac
+b0 aaaad
+b0 aaaae
+r0 aaaaf
+r0 aaaag
+0aaaah
+xaaaai
+b0 aaaaj
+bXXXX aaaak
+b0 aaaal
+b0 aaaam
+b0 aaaan
+b0 aaaao
+b0 aaaap
+b0 aaaaq
+b0 aaaar
+b0 aaaas
+1aaaat
+b0 aaaau
+b0 aaaav
+$end
+
+#5
+0aaaat
+
+#10
+1aaaat
+
+#15
+0aaaat
+
+#20
+1aaaat
+
+#25
+0aaaat
+
+#30
+1aaaat
+
+#35
+0aaaat
+
+#40
+1aaaat
+
+#45
+0aaaat
+
+#50
+1aaaat
+
+#55
+0aaaat
+
+#60
+1aaaat
+
+#65
+0aaaat
+
+#70
+1aaaat
+
+#75
+0aaaat
+
+#80
+1aaaat
+
+#85
+0aaaat
+
+#90
+1aaaat
+
+#95
+0aaaat
+
+$comment
+Now at 10 NS
+$end
+
+#100
+1aaaaa
+b1111111 aaaab
+b111111111111111 aaaac
+b1111111111111111111111111111111 aaaad
+b111111111111111111111111111111111111111111111111111111111111111 aaaae
+r3.402823466385289e+38 aaaaf
+r1.797693134862316e+308 aaaag
+1aaaah
+b101 aaaaj
+b1ZX aaaak
+b111111111111111111111111111111111111111111111111111111111111111 aaaal
+b111111111111111111111111111111111111111111111111111111111111111 aaaam
+b1 aaaan
+b1 aaaao
+b11 aaaap
+b11 aaaaq
+b11 aaaar
+b11 aaaas
+1aaaat
+b1111111111111111111111111111111 aaaau
+b1111111111111111111111111111111 aaaav
+
+#105
+0aaaat
+
+#110
+1aaaat
+
+#115
+0aaaat
+
+#120
+1aaaat
+
+#125
+0aaaat
+
+#130
+1aaaat
+
+#135
+0aaaat
+
+#140
+1aaaat
+
+#145
+0aaaat
+
+#150
+1aaaat
+
+#155
+0aaaat
+
+#160
+1aaaat
+
+#165
+0aaaat
+
+#170
+1aaaat
+
+#175
+0aaaat
+
+#180
+1aaaat
+
+#185
+0aaaat
+
+#190
+1aaaat
+
+#195
+0aaaat
+
+$comment
+Now at 20 NS do delta cycles
+$end
+
+#200
+1aaaat
+
+#205
+0aaaat
+
+#210
+1aaaat
+
+#215
+0aaaat
+
+#220
+1aaaat
+
+#225
+0aaaat
+
+#230
+1aaaat
+
+#235
+0aaaat
+
+#240
+1aaaat
+
+#245
+0aaaat
+
+#250
+1aaaat
+
+#255
+0aaaat
+
+#260
+1aaaat
+
+#265
+0aaaat
+
+#270
+1aaaat
+
+#275
+0aaaat
+
+#280
+1aaaat
+
+#285
+0aaaat
+
+#290
+1aaaat
+
+#295
+0aaaat
+
+#300
+1aaaat
+
+$comment
+Now at 30.5 NS check resolution
+$end
+
+#305
+0aaaaa
+b10000000 aaaab
+b1000000000000000 aaaac
+b10000000000000000000000000000000 aaaad
+b1000000000000000000000000000000000000000000000000000000000000000 aaaae
+r1.192092895507812e-07 aaaaf
+r2.220446049250313e-16 aaaag
+0aaaah
+zaaaai
+b1010 aaaaj
+bXZ10 aaaak
+b1000000000000000000000000000000000000000000000000000000000000000 aaaal
+b1000000000000000000000000000000000000000000000000000000000000000 aaaam
+b11111111111111111111111111111111111111111111111111111111111111111 aaaan
+b11111111111111111111111111111111111111111111111111111111111111111 aaaao
+b11100 aaaap
+b1100 aaaaq
+b11100 aaaar
+b1100 aaaas
+0aaaat
+b10000000000000000000000000000000 aaaau
+b10000000000000000000000000000000 aaaav
+
+#310
+1aaaat
+
+#315
+0aaaat
+
+#320
+1aaaat
+
+#325
+0aaaat
+
+#330
+1aaaat
+
+#335
+0aaaat
+
+#340
+1aaaat
+
+#345
+0aaaat
+
+#350
+1aaaat
+
+#355
+0aaaat
+
+#360
+1aaaat
+
+#365
+0aaaat
+
+#370
+1aaaat
+
+#375
+0aaaat
+
+#380
+1aaaat
+
+#385
+0aaaat
+
+#390
+1aaaat
+
+#395
+0aaaat
+
+#400
+1aaaat
+

@@ -1,0 +1,24 @@
+xcelium> run
+time: 0, cycle: 1 Write process started
+time: 0, cycle: 1 Write process wrote data 42
+time: 0, cycle: 1 Write process wrote data 86
+time: 0, cycle: 1 Read  process started
+time: 0, cycle: 2 Read  process read  data 42
+time: 0, cycle: 2 Read  process read  data 86
+time: 0, cycle: 3 Write process wrote data 911
+time: 0, cycle: 4 Read  process read  data 911
+time: 1, cycle: 6 Read  process started
+time: 1, cycle: 6 Write process started
+time: 1, cycle: 6 Write process wrote data 42
+time: 1, cycle: 6 Write process wrote data 86
+time: 1, cycle: 7 Read  process read  data 42
+time: 1, cycle: 7 Read  process read  data 86
+time: 1, cycle: 8 Write process wrote data 911
+time: 1, cycle: 9 Read  process read  data 911
+SystemC: simulation stopped by user.
+
+
+SC simulation stopped by user.
+
+SystemC : SystemC stopped at time 1
+xcelium> exit

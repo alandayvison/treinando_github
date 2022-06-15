@@ -1,0 +1,13 @@
+# REMEMBER TO CUSTOMIZE "class_setup" for your installation (and source it)
+
+all : clean verify
+
+verify : xmsim.log
+	diff xmsim_sav.log xmsim.log > /dev/null 2>&1
+
+xmsim.log : test.cpp
+	xmsc_run test.cpp -gnu -nocopyright > /dev/null 2>&1
+
+clean :
+	rm -fr xcelium.d xmsim.log *.so > /dev/null 2>&1
+

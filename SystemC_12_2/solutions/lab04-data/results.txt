@@ -1,0 +1,17 @@
+cp ../solutions/lab04-data/*.h   . >> /dev/null 2>&1
+cp ../solutions/lab04-data/*.cpp . >> /dev/null 2>&1
+rm -f scsim.exe *.log *.tmp >> /dev/null 2>&1
+
+/usr/bin/g++ pnet_frame.cpp pnet_frame_test.cpp -g -o scsim.exe -I/cds1/systemc-2.3.3/include -L/cds1/systemc-2.3.3/lib-linux64 -lsystemc >> g++1.log 2>&1
+scsim.exe >> scsim1.log 2>&1
+tail -5 ../solutions/lab04-data/scsim1.log >> scsim1_old.log.tmp 2>&1
+tail -5                   scsim1.log >> scsim1_new.log.tmp 2>&1
+diff scsim1_old.log.tmp scsim1_new.log.tmp >> /dev/null 2>&1
+
+/usr/bin/g++ pnet_frame.cpp pnet_chan.cpp pnet_cpu.cpp pnet_node.cpp pnet_system.cpp pnet_monitor.cpp sc_main.cpp -g -o scsim.exe -I/cds1/systemc-2.3.3/include -L/cds1/systemc-2.3.3/lib-linux64 -lsystemc >> g++2.log 2>&1
+scsim.exe >> scsim2.log 2>&1
+tail -5 ../solutions/lab04-data/scsim2.log >> scsim2_old.log.tmp 2>&1
+tail -5                   scsim2.log >> scsim2_new.log.tmp 2>&1
+diff scsim2_old.log.tmp scsim2_new.log.tmp >> /dev/null 2>&1
+
+#PASS: lab04-data

@@ -1,0 +1,17 @@
+cp ../solutions/lab08-pchan/*.h   . >> /dev/null 2>&1
+cp ../solutions/lab08-pchan/*.cpp . >> /dev/null 2>&1
+rm -f scsim.exe *.log *.tmp >> /dev/null 2>&1
+
+/usr/bin/g++ pnet_sync_test.cpp -g -o scsim.exe -I/cds1/systemc-2.3.3/include -L/cds1/systemc-2.3.3/lib-linux64 -lsystemc >> g++1.log 2>&1
+scsim.exe >> scsim1.log 2>&1
+tail -32 ../solutions/lab08-pchan/scsim1.log >> scsim_old1.log.tmp 2>&1
+tail -32                   scsim1.log >> scsim_new1.log.tmp 2>&1
+diff scsim_old1.log.tmp scsim_new1.log.tmp >> /dev/null 2>&1
+
+/usr/bin/g++ pnet_frame.cpp pnet_chan.cpp pnet_cpu.cpp pnet_node.cpp pnet_monitor.cpp pnet_system.cpp sc_main.cpp -g -o scsim.exe -I/cds1/systemc-2.3.3/include -L/cds1/systemc-2.3.3/lib-linux64 -lsystemc >> g++2.log 2>&1
+scsim.exe >> scsim2.log 2>&1
+tail -5 ../solutions/lab08-pchan/scsim2.log >> scsim_old2.log.tmp 2>&1
+tail -5                   scsim2.log >> scsim_new2.log.tmp 2>&1
+diff scsim_old2.log.tmp scsim_new2.log.tmp >> /dev/null 2>&1
+
+#PASS: lab08-pchan

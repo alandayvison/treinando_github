@@ -1,0 +1,12 @@
+MADE: lab01-help
+MADE: lab02-intro
+MADE: lab03-lang
+MADE: lab04-data
+MADE: lab05-proc
+MADE: lab06-ifcp
+MADE: lab07-schd
+MADE: lab08-pchan
+MADE: lab09-hchan
+MADE: lab10-query
+MADE: lab11-debug
+ALL LABS MADE

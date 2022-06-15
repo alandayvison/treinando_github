@@ -1,0 +1,23 @@
+xcelium> run
+START OF SYNC TEST
+Assert number free not 0
+Assert number available is 0
+Assert nonblocking write succeeds
+Assert channel not yet updated
+Wait for data_written_event
+Assert wait did not time out
+Assert channel is updated
+Assert nonblocking read succeeds
+Assert stored value is correct
+Assert channel not yet updated
+Wait for data_read_event
+Assert wait did not time out
+Assert channel is updated
+Attempt blocking write
+Wait for write to complete
+Assert wait did not time out
+Attempt blocking read
+Wait for read to complete
+Assert wait did not time out
+Assert stored value is correct
+END OF SYNC TEST

@@ -1,0 +1,5 @@
+cp -r /cds1/XCELIUM1909S001/doc/xmsctut2/example/ . >> /dev/null 2>&1
+xrun *.cpp *.v -log_xmsim xmsim.log -q -sysc -top scMain >> /dev/null 2>&1
+grep Monitor.final.event.count:.40 example/xmsim.log >> /dev/null 2>&1
+
+#PASS: lab11-debug

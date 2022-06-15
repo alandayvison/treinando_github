@@ -1,0 +1,4 @@
+sc_main.cpp:20: warning: ‘SEED’ initialized and declared ‘extern’
+sc_main.cpp:21: warning: ‘NODES’ initialized and declared ‘extern’
+sc_main.cpp:22: warning: ‘VERBOSITY’ initialized and declared ‘extern’
+sc_main.cpp:23: warning: ‘TRANSACTIONS’ initialized and declared ‘extern’

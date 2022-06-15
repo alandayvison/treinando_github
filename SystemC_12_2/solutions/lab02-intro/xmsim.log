@@ -1,0 +1,89 @@
+xcelium> run
+200 ns	 loading machine with 10 cans, 8 dimes, 4 nickels
+400	 entered nickel
+600	 entered dime
+800	 entered quarter
+1000	 entered dime
+1100 -> drink dispensed
+-----------------------
+1200	 entered quarter
+1400	 entered nickel
+1600	 entered nickel
+1800	 entered dime
+2000	 entered quarter
+2100 -> drink dispensed
+-----------------------
+2100	 two dimes changed
+-----------------------
+2200	 entered nickel
+2400	 entered dime
+2600	 entered quarter
+2800	 entered dime
+2900 -> drink dispensed
+-----------------------
+3000	 entered quarter
+3200	 entered nickel
+3400	 entered nickel
+3600	 entered dime
+3800	 entered dime
+3900 -> drink dispensed
+-----------------------
+3900	 nickel changed
+-----------------------
+4000	 entered quarter
+4200	 entered quarter
+4300 -> drink dispensed
+-----------------------
+4400	 entered nickel
+4600	 entered dime
+4800	 entered dime
+5000	 entered dime
+5200	 entered quarter
+5300 -> drink dispensed
+-----------------------
+5300	 dime changed
+-----------------------
+5400	 entered dime
+5600	 entered dime
+5800	 entered dime
+6000	 entered quarter
+6100 -> drink dispensed
+-----------------------
+6100	 nickel changed
+-----------------------
+6200	 entered nickel
+6400	 entered nickel
+6600	 entered dime
+6800	 entered dime
+7000	 entered nickel
+7200	 entered nickel
+7400	 entered quarter
+7500 -> drink dispensed
+-----------------------
+7500	 nickel changed
+-----------------------
+7500	 dime changed
+-----------------------
+7600	 entered dime
+7800	 entered quarter
+8000	 entered nickel
+8200	 entered quarter
+8300 -> drink dispensed
+-----------------------
+8300	 nickel changed
+-----------------------
+8300	 dime changed
+-----------------------
+8400	 entered quarter
+8600	 entered quarter
+8700	 **out of drinks
+8700 -> drink dispensed
+-----------------------
+8700	 stopping machine
+-----------------------
+
+
+SC simulation stopped by user.
+
+SystemC : SystemC stopped at time 8700
+xcelium> exit

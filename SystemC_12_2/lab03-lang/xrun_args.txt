@@ -1,0 +1,7 @@
+// xrun -f xrun_args.txt -sysc
+pnet_chan.cpp
+pnet_cpu.cpp
+pnet_node.cpp
+pnet_system.cpp
+pnet_monitor.cpp
+sc_main.cpp

@@ -1,0 +1,60 @@
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+// (c) Copyright 2012 Cadence Design Systems, Inc. All Rights Reserved.       //
+//                                                                            //
+// File name   : pnet_chan.h                                                  //
+// Project     : SystemC Language Fundamentals                                //
+// Description : PNET channel                                                 //
+// Notes       : The PNET channel takes data from its cpu and from the net,   //
+//               and forwards it appropriately to either its cpu or the net.  //
+//               This PNET channel implements processes to read and write cpu //
+//               and net data through ports connected to external channels.   //
+//               Thus this PNET channel is not yet a true SystemC channel.    //
+// Change Log  : 2011-04-30 mikep Created.                                    //
+//               2012-09-23 mikep Added cpu mutex and net mutex for SimVision //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+#ifndef PNET_CHAN_H
+#define PNET_CHAN_H
+
+#include "systemc.h"
+
+SC_MODULE ( pnet_chan )
+{
+  sc_fifo_in  <sc_lv<8> >  p_cpu_read  ; // Port to read  cpu data
+  sc_fifo_out <sc_lv<8> >  p_cpu_write ; // Port to write cpu data
+  sc_fifo_in  <sc_lv<8> >  p_net_read  ; // Port to read  net data
+  sc_fifo_out <sc_lv<8> >  p_net_write ; // Port to write net data
+  sc_fifo     <sc_lv<8> >  cpu_fifo    ; // Collect cpu write data
+  sc_fifo     <sc_lv<8> >  net_fifo    ; // Collect net write data
+
+  pnet_chan ( sc_module_name name, unsigned addr ) ;
+
+  void cpu_read_process  ( ) ; // Read  bytes  from cpu data input  port
+  void cpu_write_process ( ) ; // Write bytes  to   cpu data output port
+  void net_read_process  ( ) ; // Read  frames from net data input  port
+  void net_write_process ( ) ; // Write frames to   net data output port
+
+protected:
+  sc_mutex cpu_mutex   ; // Lock/unlock cpu fifo
+  sc_mutex net_mutex   ; // Lock/unlock net fifo
+  sc_lv<2> addr ; // my address
+
+  void encode (
+    const sc_lv<2> & addr, // encode address/data
+    const sc_lv<8> & data,
+          sc_lv<8> & high, // to high/low bytes
+          sc_lv<8> & low
+  ) ;
+
+  void decode (
+    const sc_lv<8> & high, // decode high/low bytes
+    const sc_lv<8> & low,
+          sc_lv<2> & addr, // to address/data
+          sc_lv<8> & data
+  ) ;
+
+} ;
+
+#endif

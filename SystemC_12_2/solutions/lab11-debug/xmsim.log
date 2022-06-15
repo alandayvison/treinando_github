@@ -1,0 +1,211 @@
+xcelium> source /cds1/XCELIUM1909S001/tools/xcelium/files/xmsimrc
+xcelium> run
+                   0 ns: HDL process Data:          0
+Producer has started
+10 ns: scMain.Top.Consumer1 Data: 100
+10 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+10 ns: scMain.Top.Monitor detected consume event.
+11 ns: scMain.Top.Consumer2 Data: 200
+11 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+11 ns: scMain.Top.Monitor detected consume event.
+                  13 ns: HDL process Data:        400
+16 ns: scMain.Top.Consumer3 Data: 300
+16 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+19 ns: scMain.Top.Producer starting next cycle
+20 ns: scMain.Top.Consumer1 Data: 101
+20 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+20 ns: scMain.Top.Monitor detected consume event.
+21 ns: scMain.Top.Consumer2 Data: 201
+21 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+21 ns: scMain.Top.Monitor detected consume event.
+                  23 ns: HDL process Data:        401
+26 ns: scMain.Top.Consumer3 Data: 301
+26 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+29 ns: scMain.Top.Producer starting next cycle
+30 ns: scMain.Top.Consumer1 Data: 102
+30 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+30 ns: scMain.Top.Monitor detected consume event.
+31 ns: scMain.Top.Consumer2 Data: 202
+31 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+31 ns: scMain.Top.Monitor detected consume event.
+                  33 ns: HDL process Data:        402
+36 ns: scMain.Top.Consumer3 Data: 302
+36 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+39 ns: scMain.Top.Producer starting next cycle
+40 ns: scMain.Top.Consumer1 Data: 103
+40 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+40 ns: scMain.Top.Monitor detected consume event.
+41 ns: scMain.Top.Consumer2 Data: 203
+41 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+41 ns: scMain.Top.Monitor detected consume event.
+                  43 ns: HDL process Data:        403
+46 ns: scMain.Top.Consumer3 Data: 303
+46 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+49 ns: scMain.Top.Producer starting next cycle
+50 ns: scMain.Top.Consumer1 Data: 104
+50 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+50 ns: scMain.Top.Monitor detected consume event.
+51 ns: scMain.Top.Consumer2 Data: 204
+51 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+51 ns: scMain.Top.Monitor detected consume event.
+                  53 ns: HDL process Data:        404
+56 ns: scMain.Top.Consumer3 Data: 304
+56 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+59 ns: scMain.Top.Producer starting next cycle
+60 ns: scMain.Top.Consumer1 Data: 105
+60 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+60 ns: scMain.Top.Monitor detected consume event.
+61 ns: scMain.Top.Consumer2 Data: 205
+61 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+61 ns: scMain.Top.Monitor detected consume event.
+                  63 ns: HDL process Data:        405
+66 ns: scMain.Top.Consumer3 Data: 305
+66 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+69 ns: scMain.Top.Producer starting next cycle
+70 ns: scMain.Top.Consumer1 Data: 106
+70 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+70 ns: scMain.Top.Monitor detected consume event.
+71 ns: scMain.Top.Consumer2 Data: 206
+71 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+71 ns: scMain.Top.Monitor detected consume event.
+                  73 ns: HDL process Data:        406
+76 ns: scMain.Top.Consumer3 Data: 306
+76 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+79 ns: scMain.Top.Producer starting next cycle
+80 ns: scMain.Top.Consumer1 Data: 107
+80 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+80 ns: scMain.Top.Monitor detected consume event.
+81 ns: scMain.Top.Consumer2 Data: 207
+81 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+81 ns: scMain.Top.Monitor detected consume event.
+                  83 ns: HDL process Data:        407
+86 ns: scMain.Top.Consumer3 Data: 307
+86 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+89 ns: scMain.Top.Producer starting next cycle
+90 ns: scMain.Top.Consumer1 Data: 108
+90 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+90 ns: scMain.Top.Monitor detected consume event.
+91 ns: scMain.Top.Consumer2 Data: 208
+91 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+91 ns: scMain.Top.Monitor detected consume event.
+                  93 ns: HDL process Data:        408
+96 ns: scMain.Top.Consumer3 Data: 308
+96 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+99 ns: scMain.Top.Producer starting next cycle
+100 ns: scMain.Top.Consumer1 Data: 109
+100 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+100 ns: scMain.Top.Monitor detected consume event.
+101 ns: scMain.Top.Consumer2 Data: 209
+101 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+101 ns: scMain.Top.Monitor detected consume event.
+                 103 ns: HDL process Data:        409
+106 ns: scMain.Top.Consumer3 Data: 309
+106 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+109 ns: scMain.Top.Producer starting next cycle
+110 ns: scMain.Top.Consumer1 Data: 110
+110 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+110 ns: scMain.Top.Monitor detected consume event.
+111 ns: scMain.Top.Consumer2 Data: 210
+111 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+111 ns: scMain.Top.Monitor detected consume event.
+                 113 ns: HDL process Data:        410
+116 ns: scMain.Top.Consumer3 Data: 310
+116 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+119 ns: scMain.Top.Producer starting next cycle
+120 ns: scMain.Top.Consumer1 Data: 111
+120 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+120 ns: scMain.Top.Monitor detected consume event.
+121 ns: scMain.Top.Consumer2 Data: 211
+121 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+121 ns: scMain.Top.Monitor detected consume event.
+                 123 ns: HDL process Data:        411
+126 ns: scMain.Top.Consumer3 Data: 311
+126 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+129 ns: scMain.Top.Producer starting next cycle
+130 ns: scMain.Top.Consumer1 Data: 112
+130 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+130 ns: scMain.Top.Monitor detected consume event.
+131 ns: scMain.Top.Consumer2 Data: 212
+131 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+131 ns: scMain.Top.Monitor detected consume event.
+                 133 ns: HDL process Data:        412
+136 ns: scMain.Top.Consumer3 Data: 312
+136 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+139 ns: scMain.Top.Producer starting next cycle
+140 ns: scMain.Top.Consumer1 Data: 113
+140 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+140 ns: scMain.Top.Monitor detected consume event.
+141 ns: scMain.Top.Consumer2 Data: 213
+141 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+141 ns: scMain.Top.Monitor detected consume event.
+                 143 ns: HDL process Data:        413
+146 ns: scMain.Top.Consumer3 Data: 313
+146 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+149 ns: scMain.Top.Producer starting next cycle
+150 ns: scMain.Top.Consumer1 Data: 114
+150 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+150 ns: scMain.Top.Monitor detected consume event.
+151 ns: scMain.Top.Consumer2 Data: 214
+151 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+151 ns: scMain.Top.Monitor detected consume event.
+                 153 ns: HDL process Data:        414
+156 ns: scMain.Top.Consumer3 Data: 314
+156 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+159 ns: scMain.Top.Producer starting next cycle
+160 ns: scMain.Top.Consumer1 Data: 115
+160 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+160 ns: scMain.Top.Monitor detected consume event.
+161 ns: scMain.Top.Consumer2 Data: 215
+161 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+161 ns: scMain.Top.Monitor detected consume event.
+                 163 ns: HDL process Data:        415
+166 ns: scMain.Top.Consumer3 Data: 315
+166 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+169 ns: scMain.Top.Producer starting next cycle
+170 ns: scMain.Top.Consumer1 Data: 116
+170 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+170 ns: scMain.Top.Monitor detected consume event.
+171 ns: scMain.Top.Consumer2 Data: 216
+171 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+171 ns: scMain.Top.Monitor detected consume event.
+                 173 ns: HDL process Data:        416
+176 ns: scMain.Top.Consumer3 Data: 316
+176 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+179 ns: scMain.Top.Producer starting next cycle
+180 ns: scMain.Top.Consumer1 Data: 117
+180 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+180 ns: scMain.Top.Monitor detected consume event.
+181 ns: scMain.Top.Consumer2 Data: 217
+181 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+181 ns: scMain.Top.Monitor detected consume event.
+                 183 ns: HDL process Data:        417
+186 ns: scMain.Top.Consumer3 Data: 317
+186 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+189 ns: scMain.Top.Producer starting next cycle
+190 ns: scMain.Top.Consumer1 Data: 118
+190 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+190 ns: scMain.Top.Monitor detected consume event.
+191 ns: scMain.Top.Consumer2 Data: 218
+191 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+191 ns: scMain.Top.Monitor detected consume event.
+                 193 ns: HDL process Data:        418
+196 ns: scMain.Top.Consumer3 Data: 318
+196 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+199 ns: scMain.Top.Producer starting next cycle
+200 ns: scMain.Top.Consumer1 Data: 119
+200 ns, scMain.Top.Monitor.func_detect_event1: function sees event #1
+200 ns: scMain.Top.Monitor detected consume event.
+201 ns: scMain.Top.Consumer2 Data: 219
+201 ns, scMain.Top.Monitor.func_detect_event2: function sees event #2
+201 ns: scMain.Top.Monitor detected consume event.
+                 203 ns: HDL process Data:        419
+206 ns: scMain.Top.Consumer3 Data: 319
+206 ns, scMain.Top.Monitor.func_detect_event3: function sees event #3
+209 ns: scMain.Top.Producer starting next cycle
+
+
+SC simulation stopped by user.
+
+SystemC : SystemC stopped at time 215
+--- Monitor final event count: 40
+xcelium> exit
